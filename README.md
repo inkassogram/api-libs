@@ -1,4 +1,6 @@
 # API Libs
+Version: ``3.0.0``
+
 
 Contains API libraries for both the Fakturagram and Inkassogram web services.
 
