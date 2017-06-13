@@ -5,7 +5,7 @@
  * @author      Johan Sall Larsson <johan@inkassogram.se>
  * @author      Simon Stal <simon@inkassogram.se>
  * @copyright   2017 Inkassogram AB (publ)
- * @version     1.0.0
+ * @version     2.0.0
  * @package     Inkassogram
  *
  * MIT LICENSE
@@ -38,7 +38,7 @@ namespace Inkassogram\Bookkeeping\Utils;
  * @package Inkassogram
  * @author  Johan Sall Larsson <johan@inkassogram.se>
  * @author  Simon Stal <simon@inkassogram.se>
- * @since   1.0.0
+ * @since   2.0.0
  */
 class OrganizationalOrPersonalIdentityNumberValidator
 {
@@ -91,7 +91,7 @@ class OrganizationalOrPersonalIdentityNumberValidator
     /**
      * Validates a Swedish personnummer (Personal Identity Number).
      * </p>
-     * <a href="http://www.skatteverket.se/download/18.1e6d5f87115319ffba380001883/70408svartvit.pdf">Personnummer dokumentation</a>
+     * <a href="http://www.skatteverket.se/download/18.1e6d5f87115319ffba2.0.01883/70408svartvit.pdf">Personnummer dokumentation</a>
      * </p>
      * @param personalIdentityNumber
      * @return {@code TRUE} if valid.

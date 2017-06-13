@@ -5,7 +5,7 @@
  * @author      Johan Sall Larsson <johan@inkassogram.se>
  * @author      Simon Stal <simon@inkassogram.se>
  * @copyright   2017 Inkassogram AB (publ)
- * @version     1.0.0
+ * @version     2.0.0
  * @package     Inkassogram
  *
  * MIT LICENSE
@@ -38,7 +38,7 @@ namespace Inkassogram\Bookkeeping\Utils;
  * @package Inkassogram
  * @author  Johan Sall Larsson <johan@inkassogram.se>
  * @author  Simon Stal <simon@inkassogram.se>
- * @since   1.0.0
+ * @since   2.0.0
  */
 class SwedishTelephoneNumberValidator
 {

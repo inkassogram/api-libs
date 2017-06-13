@@ -4,7 +4,7 @@
  *
  * @author      Inkassogram Development Team <development@inkassogram.se>
  * @copyright   2017 Inkassogram AB (publ)
- * @version     3.0.0
+ * @version     2.0.0
  * @package     Inkassogram
  *
  * MIT LICENSE
@@ -36,7 +36,7 @@ namespace Includes\Inkassogram\Invoice\Contract;
  *
  * @package Inkassogram
  * @author  Inkassogram Development Team <development@inkassogram.se>
- * @since   3.0.0
+ * @since   2.0.0
  */
 class GetInvoiceFilterOptionsRequest extends SoapRequest
 {

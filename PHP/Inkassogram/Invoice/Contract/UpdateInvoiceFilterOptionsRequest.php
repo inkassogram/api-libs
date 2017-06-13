@@ -36,7 +36,7 @@ namespace Includes\Inkassogram\Invoice\Contract;
  *
  * @package Inkassogram
  * @author  Inkassogram Development Team <development@inkassogram.se>
- * @since   3.0.0
+ * @since   2.0.0
  */
 class UpdateInvoiceFilterOptionsRequest extends SoapRequest 
 {
