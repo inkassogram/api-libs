@@ -1,8 +1,8 @@
 <?php
 /**
- * Inkassogram Invoice SOAP API Client
+ * Berazy Invoice SOAP API Client
  *
- * @author  Inkassogram Dev Team <development@inkassogram.se>
+ * @author      Inkassogram Development Team <development@inkassogram.se>
  * @copyright   2017 Inkassogram AB (publ)
  * @version     3.0.0
  * @package     Inkassogram
@@ -35,7 +35,7 @@ namespace Includes\Inkassogram\Invoice\Contract;
  * Class equivalent to XSD element GetInvoiceFilterOptionsRequestType.
  *
  * @package Inkassogram
- * @author  Inkassogram Dev Team <development@inkassogram.se>
+ * @author  Inkassogram Development Team <development@inkassogram.se>
  * @since   3.0.0
  */
 class GetInvoiceFilterOptionsRequestType extends AuthenticationType 
