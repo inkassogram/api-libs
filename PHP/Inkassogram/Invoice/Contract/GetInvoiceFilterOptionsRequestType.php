@@ -1,6 +1,6 @@
 <?php
 /**
- * Berazy Invoice SOAP API Client
+ * Inkassogram Invoice SOAP API Client
  *
  * @author      Inkassogram Development Team <development@inkassogram.se>
  * @copyright   2017 Inkassogram AB (publ)
