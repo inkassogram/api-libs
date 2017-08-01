@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>se.inkassogram</groupId>
+    <artifactId>inkassogram-invoice-api</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>inkassogram-invoice-api</name>
+    <url>http://maven.apache.org</url>
+  
+    <properties>
+        <cxf.version>2.6.2</cxf.version>
+        <httpclient.version>4.2.5</httpclient.version>
+        <slf4j.version>1.7.5</slf4j.version>
+        <compile.source>1.6</compile.source>
+    </properties>
+	
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>    
+    </dependencies>
+	
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${compile.source}</source>
+                    <target>${compile.source}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-xjc-plugin</artifactId>
+                <version>${cxf.version}</version>
+                <executions>
+                    <execution>
+                        <id>generate-sources</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>xsdtojava</goal>
+                        </goals>
+                        <configuration>
+                            <sourceRoot>${basedir}/src/main/java/</sourceRoot>
+                            <xsdOptions>
+                                <xsdOption>
+                                    <xsd>https://api.inkassogram.se/API/createInvoiceBookkeepingSchema1.0.xsd</xsd>
+                                </xsdOption>
+                                <xsdOption>
+                                    <xsd>https://api.inkassogram.se/API/creditInvoiceSchema1.0.xsd</xsd>
+                                </xsdOption>
+                            </xsdOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                 <directory>src/main/resources</directory>
+                 <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+	
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <customerNo>CHANGE_ME</customerNo>
+                <authToken>CHANGE_ME</authToken>
+                <ipAddress>CHANGE_ME</ipAddress>
+            </properties>
+        </profile>
+    </profiles>
+	
+</project>
