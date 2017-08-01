@@ -9,3 +9,7 @@ Getting started
 ### Compiled version
 
 By default the compiled version uses Java 1.8 which can be modified if desired in the `pom.xml` file.
+
+### Bonus level
+
+Run `mvn eclipse:eclipse` (Eclipse IDE) and import the project for further development.
