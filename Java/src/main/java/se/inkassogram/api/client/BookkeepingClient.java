@@ -188,9 +188,8 @@ public class BookkeepingClient {
         
         try {
             String data = XmlUtils.serialize(requestObject);
-            StringEntity stringEntity = new StringEntity(data);
+            StringEntity stringEntity = new StringEntity(data, "UTF-8");
             stringEntity.setContentType("application/xml");
-            stringEntity.setContentEncoding("UTF-8");
             httpPost.setEntity(stringEntity);
             log.debug(String.format("XML request: ", data));
             HttpResponse response = httpClient.execute(httpPost);
