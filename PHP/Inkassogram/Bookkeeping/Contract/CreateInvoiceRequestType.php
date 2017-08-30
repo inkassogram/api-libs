@@ -49,16 +49,16 @@ class CreateInvoiceRequestType
      * @var string
      */
     private $isTestModeEnabled;
-    
+
     /**
-     * If 1 the invoice will NOT be sent to the customer 
+     * If 1 the invoice will NOT be sent to the customer
      * until activation, see activate_invoice.
      * @var int
      */
     private $makeInvoiceReservation;
-    
+
     /**
-     * Force to send invoice even though the end user has got a bad credit rate. 
+     * Force to send invoice even though the end user has got a bad credit rate.
      * Suitable for use with errorCode 116, 117 120 and 121.
      * @var int
      */
@@ -82,6 +82,15 @@ class CreateInvoiceRequestType
     private $printSetup;
 
     /**
+     * ENUM
+     * invoice
+     * reminder
+     * debtCollection
+     * @var string
+     */
+    private $sendAs;
+
+    /**
      * Social Security Number, Organization Number, or a 32 character auth key (ONLY for WAP Purchase API).
      * @var string
      */
@@ -98,7 +107,7 @@ class CreateInvoiceRequestType
      * @var ForeignCustomerType
      */
     private $foreignCustomer;
-    
+
     /**
      * To send the invoice to another address instead of the company address
      * @var CareOfAddressType
@@ -112,7 +121,7 @@ class CreateInvoiceRequestType
     private $invoiceReference;
 
     /**
-     * The reference number of the order made from the end customer. 
+     * The reference number of the order made from the end customer.
      * Will be visible on the invoice for the end customer.
      * @var string
      */
@@ -137,10 +146,22 @@ class CreateInvoiceRequestType
     private $invoiceDate;
 
     /**
-     * Invoice Due Date in Unixtime format.
+    * Invoice Due Date in Unixtime format.
+    * @var float
+    */
+    private $invoiceDueDate;
+
+    /**
+     * overdue interest for late payments
+     * @var float
+     */
+    private $overdueInterest;
+
+    /**
+     * Amortization plan can be inited by debtor true/false
      * @var int
      */
-    private $invoiceDueDate;
+    private $amortization;
 
     /**
      * ?
@@ -167,7 +188,7 @@ class CreateInvoiceRequestType
     private $emailAddress;
 
     /**
-     * Order Number, must be unique for each invoice and should be an internal value. 
+     * Order Number, must be unique for each invoice and should be an internal value.
      * Used to get the status or credit the invoice.
      * @var string
      */
@@ -208,11 +229,29 @@ class CreateInvoiceRequestType
      * @var string
      */
     private $billingVar;
-    
+
+    /**
+     * The attachedDocument (base64_encoded document).
+     * @var string
+     */
+    private $attachedDocument;
+
+    /**
+     * The attachedDocumentMd5 variable (It's an md5 sum of the attached document in binary).
+     * @var string
+     */
+    private $attachedDocumentMd5;
+
+    /**
+    * If automatic injunction should be activated for the invoice.
+    * @var int
+    */
+    private $injunctionAcceptedByCustomer;
+
     /********************************************************************************
      * Getters and setters
      *******************************************************************************/
-     
+
     /**
      * @XmlElement testInvoice
      */
@@ -220,13 +259,13 @@ class CreateInvoiceRequestType
     {
         return $this->isTestModeEnabled;
     }
-    
+
     public function setIsTestModeEnabled($isTestModeEnabled)
     {
         $this->isTestModeEnabled = $isTestModeEnabled;
         return $this;
     }
-    
+
     /**
      * @XmlElement makeInvoiceReservation
      */
@@ -234,13 +273,13 @@ class CreateInvoiceRequestType
     {
         return $this->makeInvoiceReservation;
     }
-    
+
     public function setMakeInvoiceReservation($makeInvoiceReservation)
     {
         $this->makeInvoiceReservation = $makeInvoiceReservation;
         return $this;
     }
-        
+
     /**
      * @XmlElement forceToSend
      */
@@ -248,13 +287,13 @@ class CreateInvoiceRequestType
     {
         return $this->forceToSend;
     }
-    
+
     public function setForceToSend($forceToSend)
     {
         $this->forceToSend = $forceToSend;
         return $this;
     }
-    
+
     /**
      * @XmlElement service
      */
@@ -262,13 +301,13 @@ class CreateInvoiceRequestType
     {
         return $this->service;
     }
-    
+
     public function setService($service)
     {
         $this->service = $service;
         return $this;
     }
-    
+
     /**
      * @XmlElement printSetup
      */
@@ -276,13 +315,27 @@ class CreateInvoiceRequestType
     {
         return $this->printSetup;
     }
-    
+
     public function setPrintSetup($printSetup)
     {
         $this->printSetup = $printSetup;
         return $this;
     }
-    
+
+    /**
+     * @XmlElement sendAs
+     */
+    public function getSendAs()
+    {
+        return $this->sendAs;
+    }
+
+    public function setSendAs($sendAs)
+    {
+        $this->sendAs = $sendAs;
+        return $this;
+    }
+
     /**
      * @XmlElement ssn
      */
@@ -290,13 +343,13 @@ class CreateInvoiceRequestType
     {
         return $this->ssn;
     }
-    
+
     public function setSsn($ssn)
     {
         $this->ssn = $ssn;
         return $this;
     }
-    
+
     /**
      * @XmlElement send_to_organization
      */
@@ -304,13 +357,13 @@ class CreateInvoiceRequestType
     {
         return $this->sendToOrganization;
     }
-    
+
     public function setSendToOrganization($sendToOrganization)
     {
         $this->sendToOrganization = $sendToOrganization;
         return $this;
     }
-    
+
     /**
      * @XmlElement foreignCustomer
      */
@@ -318,13 +371,13 @@ class CreateInvoiceRequestType
     {
         return $this->foreignCustomer;
     }
-    
+
     public function setForeignCustomer(ForeignCustomerType $foreignCustomer)
     {
         $this->foreignCustomer = $foreignCustomer;
         return $this;
     }
-    
+
     /**
      * @XmlElement careOfAddress
      */
@@ -332,13 +385,13 @@ class CreateInvoiceRequestType
     {
         return $this->careOfAddress;
     }
-    
+
     public function setCareOfAddress(CareOfAddressType $careOfAddress)
     {
         $this->careOfAddress = $careOfAddress;
         return $this;
     }
-    
+
     /**
      * @XmlElement invoiceRef
      */
@@ -346,20 +399,20 @@ class CreateInvoiceRequestType
     {
         return $this->invoiceReference;
     }
-    
+
     public function setInvoiceReference($invoiceReference)
     {
         $this->invoiceReference = $invoiceReference;
         return $this;
     }
-    
+
     /**
      * @XmlElement invoiceOrderNo
      */
     public function getInvoiceOrderNo() {
         return $this->invoiceOrderNo;
     }
-    
+
     public function setInvoiceOrderNo($invoiceOrderNo) {
         $this->invoiceOrderNo = $invoiceOrderNo;
         return $this;
@@ -372,13 +425,13 @@ class CreateInvoiceRequestType
     {
         return $this->shippingFee;
     }
-    
+
     public function setShippingFee($shippingFee)
     {
         $this->shippingFee = $shippingFee;
         return $this;
     }
-    
+
     /**
      * @XmlElement expFee
      */
@@ -386,13 +439,13 @@ class CreateInvoiceRequestType
     {
         return $this->expeditionFee;
     }
-    
+
     public function setExpeditionFee($expeditionFee)
     {
         $this->expeditionFee = $expeditionFee;
         return $this;
     }
-    
+
     /**
      * @XmlElement invoiceDate
      */
@@ -400,7 +453,7 @@ class CreateInvoiceRequestType
     {
         return $this->invoiceDate;
     }
-    
+
     public function setInvoiceDate($invoiceDate)
     {
         $this->invoiceDate = $invoiceDate;
@@ -414,10 +467,51 @@ class CreateInvoiceRequestType
     {
         return $this->invoiceDueDate;
     }
-    
+
     public function setInvoiceDueDate($invoiceDueDate)
     {
         $this->invoiceDueDate = $invoiceDueDate;
+        return $this;
+    }
+
+    /**
+     * @XmlElement overdueInterest
+     */
+    public function getOverdueInterest()
+    {
+        return $this->overdueInterest;
+    }
+
+    public function setOverdueInterest($overdueInterest)
+    {
+        $this->overdueInterest = $overdueInterest;
+        return $this;
+    }
+
+    /**
+     * @XmlElement injunctionAcceptedByCustomer
+     */
+    public function getInjunctionAcceptedByCustomer()
+    {
+        return $this->injunctionAcceptedByCustomer;
+    }
+
+    public function setInjunctionAcceptedByCustomer($injunctionAcceptedByCustomer)
+    {
+        $this->injunctionAcceptedByCustomer = $injunctionAcceptedByCustomer;
+    }
+
+    /**
+     * @XmlElement amortization
+     */
+    public function getAmortization()
+    {
+        return $this->amortization;
+    }
+
+    public function setAmortization($amortization)
+    {
+        $this->amortization = $amortization;
         return $this;
     }
 
@@ -428,13 +522,13 @@ class CreateInvoiceRequestType
     {
         return $this->clientIpAddress;
     }
-    
+
     public function setClientIpAddress($clientIpAddress)
     {
         $this->clientIpAddress = $clientIpAddress;
         return $this;
     }
-    
+
     /**
      * @XmlElement callback
      */
@@ -442,13 +536,13 @@ class CreateInvoiceRequestType
     {
         return $this->callbackUrl;
     }
-    
+
     public function setCallbackUrl($callbackUrl)
     {
         $this->callbackUrl = $callbackUrl;
         return $this;
     }
-    
+
     /**
      * @XmlElement mobile
      */
@@ -456,13 +550,13 @@ class CreateInvoiceRequestType
     {
         return $this->mobile;
     }
-    
+
     public function setMobile($mobile)
     {
         $this->mobile = $mobile;
         return $this;
     }
-    
+
     /**
      * @XmlElement email
      */
@@ -470,13 +564,13 @@ class CreateInvoiceRequestType
     {
         return $this->emailAddress;
     }
-    
+
     public function setEmailAddress($emailAddress)
     {
         $this->emailAddress = $emailAddress;
         return $this;
     }
-    
+
     /**
      * @XmlElement orderNo
      */
@@ -484,13 +578,13 @@ class CreateInvoiceRequestType
     {
         return $this->orderNumber;
     }
-    
+
     public function setOrderNumber($orderNumber)
     {
         $this->orderNumber = $orderNumber;
         return $this;
     }
-    
+
     /**
      * @XmlElement ourRef
      */
@@ -498,13 +592,13 @@ class CreateInvoiceRequestType
     {
         return $this->ourReference;
     }
-    
+
     public function setOurReference($ourReference)
     {
         $this->ourReference = $ourReference;
         return $this;
     }
-    
+
     /**
      * @XmlElement yourRef
      */
@@ -512,13 +606,13 @@ class CreateInvoiceRequestType
     {
         return $this->yourReference;
     }
-    
+
     public function setYourReference($yourReference)
     {
         $this->yourReference = $yourReference;
         return $this;
     }
-    
+
     /**
      * @XmlElement invoiceRows
      */
@@ -526,13 +620,13 @@ class CreateInvoiceRequestType
     {
         return $this->invoiceRows;
     }
-    
+
     public function setInvoiceRows(array $invoiceRows)
     {
         $this->invoiceRows = $invoiceRows;
         return $this;
     }
-    
+
     /**
      * @XmlElement comments
      */
@@ -540,13 +634,13 @@ class CreateInvoiceRequestType
     {
         return $this->comment;
     }
-    
+
     public function setComment($comment)
     {
         $this->comment = $comment;
         return $this;
     }
-    
+
     /**
      * @XmlElement discount
      */
@@ -554,13 +648,13 @@ class CreateInvoiceRequestType
     {
         return $this->discount;
     }
-    
+
     public function setDiscount($discount)
     {
         $this->discount = $discount;
         return $this;
     }
-    
+
     /**
      * @XmlElement billingVar
      */
@@ -568,11 +662,38 @@ class CreateInvoiceRequestType
     {
         return $this->billingVar;
     }
-    
+
     public function setBillingVar($billingVar)
     {
         $this->billingVar = $billingVar;
         return $this;
     }
-    
+
+    /**
+     * @XmlElement attachedDocument
+     */
+    public function getAttachedDocument()
+    {
+        return $this->attachedDocument;
+    }
+
+    public function setAttachedDocument($attachedDocument)
+    {
+        $this->attachedDocument = $attachedDocument;
+        return $this;
+    }
+
+    /**
+     * @XmlElement attachedDocumentMd5
+     */
+    public function getAttachedDocumentMd5()
+    {
+        return $this->attachedDocumentMd5;
+    }
+
+    public function setAttachedDocumentMd5($attachedDocumentMd5)
+    {
+        $this->attachedDocumentMd5 = $attachedDocumentMd5;
+        return $this;
+    }
 }
