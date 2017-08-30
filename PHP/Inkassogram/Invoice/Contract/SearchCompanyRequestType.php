@@ -54,27 +54,32 @@ class SearchCompanyRequestType extends AuthenticationType
      * @var string
      */
     private $organization_number;
-    
+
     /**
      * A search for "Berasy" with $phonetic_search TRUE
      * will yield in a result including "Inkassogram".
      * @var bool
      */
     private $phonetic_search;
-    
+
     /**
      * ?
      * @var string [optional]
      */
     private $country;
-    
+
     /**
      * Maximum number of hits. Minimum 1 and maximum 40.
      * @var int
      */
     private $number_hits;
-    
-    
+
+    /**
+     * Client IP address / remote ip address of user
+     * @var string
+     */
+    private $client_ip;
+
     /********************************************************************************
      * Getters and setters
      *******************************************************************************/
@@ -87,7 +92,7 @@ class SearchCompanyRequestType extends AuthenticationType
     {
         return $company_name;
     }
-    
+
     /**
      * Sets the company name.
      * @param string $company_name
@@ -96,7 +101,7 @@ class SearchCompanyRequestType extends AuthenticationType
     {
         $this->company_name = $company_name;
     }
-    
+
     /**
      * Returns the organization number.
      * @returns string
@@ -105,7 +110,7 @@ class SearchCompanyRequestType extends AuthenticationType
     {
         return $organization_number;
     }
-    
+
     /**
      * Sets the organization number.
      * @param string $organization_number
@@ -114,7 +119,7 @@ class SearchCompanyRequestType extends AuthenticationType
     {
         $this->organization_number = $organization_number;
     }
-    
+
     /**
      * Returns whether or not to use phonetic search.
      * @returns bool
@@ -122,7 +127,7 @@ class SearchCompanyRequestType extends AuthenticationType
     public function getPhonetic_search() {
         return $this->phonetic_search;
     }
-    
+
     /**
      * Sets whether or not to use phonetic search.
      * @param bool $phonetic_search
@@ -131,7 +136,7 @@ class SearchCompanyRequestType extends AuthenticationType
     {
         $this->phonetic_search = $phonetic_search;
     }
-    
+
     /**
      * Returns the country.
      * @returns string
@@ -140,7 +145,7 @@ class SearchCompanyRequestType extends AuthenticationType
     {
         return $this->country;
     }
-    
+
     /**
      * Sets the country.
      * @param string $country
@@ -149,7 +154,7 @@ class SearchCompanyRequestType extends AuthenticationType
     {
         $this->country = $country;
     }
-    
+
     /**
      * Returns the maximum number of hits.
      * @returns int
@@ -158,7 +163,7 @@ class SearchCompanyRequestType extends AuthenticationType
     {
         return $this->number_hits;
     }
-    
+
     /**
      * Sets the maximum number of hits.
      * @param bool $number_hits
@@ -167,5 +172,22 @@ class SearchCompanyRequestType extends AuthenticationType
     {
         $this->number_hits = $number_hits;
     }
-    
+
+    /**
+     * Returns the client ip address
+     * @returns string
+     */
+    public function getClient_ip()
+    {
+        return $this->client_ip;
+    }
+
+    /**
+     * Sets the client ip address
+     * @param bool $client_ip
+     */
+    public function setClient_ip($client_ip)
+    {
+        $this->client_ip = $client_ip;
+    }
 }

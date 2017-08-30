@@ -71,6 +71,10 @@ class CancelInkassogramRequestType extends AuthenticationType
      */
     public function setOcr($ocr)
     {
-        $this->ocr = $ocr;
+        $this->ocr =  array($ocr);
+    }
+
+    public function setOcrs($ocrs){
+        $this->ocr = $ocrs;
     }
 }

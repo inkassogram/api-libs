@@ -53,6 +53,12 @@ class GetExistingCompanyRequestType extends AuthenticationType
      * @var bool
      */
     private $reseller_key;
+
+    /**
+     * customer_alias
+     * @var String
+     */
+    private $customer_alias;
     
 
     /********************************************************************************
@@ -77,5 +83,21 @@ class GetExistingCompanyRequestType extends AuthenticationType
     public function setReseller_key($reseller_key)
     {
         $this->reseller_key = $reseller_key;
+    }
+
+    /**
+     * Sets the customer_alias to the request.
+     * @param String $customerAlias
+     */
+    public function setCustomer_alias($customerAlias){
+        $this->customer_alias = $customerAlias;
+    }
+
+    /**
+     * Gets the customer_alias of the request.
+     * @return String
+     */
+    public function getCustomer_alias(){
+        return $this->customer_alias;
     }
 }

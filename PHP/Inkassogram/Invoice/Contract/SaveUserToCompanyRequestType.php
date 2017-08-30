@@ -77,7 +77,21 @@ class SaveUserToCompanyRequestType extends AuthenticationType
      * @var string
      */
     private $email;
-    
+
+    /**
+     * The BankID ocsp, retrieved from the BankID signature response.
+     * @var String bankid_ocsp
+     */
+    private $bankid_ocsp;
+
+    /**
+    * The BankID Signature retrieved from the BankID signature response.
+    * @var String bankid_signature
+    */
+    private $bankid_signature;
+
+
+
 
     /********************************************************************************
      * Getters and setters
@@ -131,5 +145,21 @@ class SaveUserToCompanyRequestType extends AuthenticationType
     public function setEmail($email)
     {
         $this->email = $email;
+    }
+
+    public function setBankid_ocsp($bankid_ocsp){
+        $this->bankid_ocsp = $bankid_ocsp;
+    }
+
+    public function getBankid_ocsp(){
+        return $this->bankid_ocsp;
+    }
+
+    public function setBankid_signature($bankid_signature){
+        $this->bankid_signature = $bankid_signature;
+    }
+
+    public function getBankid_signature(){
+        return $this->bankid_signature;
     }
 }

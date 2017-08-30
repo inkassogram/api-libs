@@ -44,8 +44,8 @@ class SearchInvoicesRequestType extends AuthenticationType
 {
 
     /**
-     * The OCR number received in the response when the 
-     * invoice was created. 
+     * The OCR number received in the response when the
+     * invoice was created.
      * Optional ONLY IF $order_no is set.
      * @var int
      */
@@ -74,11 +74,22 @@ class SearchInvoicesRequestType extends AuthenticationType
     * @var string
     */
     private $number_hits;
-    
+
+    /**
+     * Payment status
+     * @var ENUM of (PAID, UNPAID, PART_PAID, CREDITED, RESERVED, UNPAID_AND_NOT_PAST_DUE_DATE, UNPAID_AND_PAST_DUE_DATE, UNPAID_AND_PAST_DEBT_COLLECTION_DUE_DATE, UNPAID_COLLECTION_FEES_AND_INJUCTION_NOT_ACCEPTED_BY_CUSTOMER, UNPAID_WITH_CAPITAL_AND_INJUCTION_NOT_ACCEPTED_BY_CUSTOMER or UNPAID_AND_INJUCTION_SENT)
+     */
+    private $payment_status;
+
+    private $billing_var2;
+
+    private $date_from;
+    private $date_to;
+
     /********************************************************************************
      * Getters and setters
      *******************************************************************************/
-    
+
     /**
      * @returns int
      */
@@ -86,7 +97,7 @@ class SearchInvoicesRequestType extends AuthenticationType
     {
         return $this->ocr;
     }
-    
+
     /**
      * @param int $ocr
      */
@@ -192,6 +203,74 @@ class SearchInvoicesRequestType extends AuthenticationType
     */
     public function getNumberHits(){
         return $this->number_hits;
+    }
+
+    /**
+     * Returns the payment status
+     * @returns string
+     */
+    public function getPaymentStatus()
+    {
+        return $this->payment_status;
+    }
+
+    /**
+     * Sets the payment status
+     * @param string $payment_status
+     */
+    public function setPaymentStatus($payment_status)
+    {
+        $this->payment_status = $payment_status;
+    }
+
+    /**
+     * Returns the billing var2
+     * @returns string
+     */
+    public function getBillingVar2()
+    {
+        return $this->billing_var2;
+    }
+
+    /**
+     * Sets the billing var2
+     * @param string $billing_var2
+     */
+    public function setBillingVar2($billing_var2)
+    {
+        $this->billing_var2 = $billing_var2;
+    }
+
+    /**
+     * @returns date YYYY-MM-DD
+     */
+    public function getDateFrom()
+    {
+        return $this->date_from;
+    }
+
+    /**
+     * @param string $date YYYY-MM-DD
+     */
+    public function setDateFrom($date)
+    {
+        $this->date_from = $date;
+    }
+
+    /**
+     * @returns date YYYY-MM-DD
+     */
+    public function getDateTo()
+    {
+        return $this->date_to;
+    }
+
+    /**
+     * @param string $date YYYY-MM-DD
+     */
+    public function setDateTo($date)
+    {
+        $this->date_to = $date;
     }
 
 }
