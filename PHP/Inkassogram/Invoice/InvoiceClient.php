@@ -2,7 +2,7 @@
 /**
  * Inkassogram Invoice SOAP API Client
  *
- * @author      Johan Sall Larsson <johan@Inkassogram.se>
+ * @author      Inkassogram <dev@inkassogram.se>
  * @author      Simon Stal <simon@Inkassogram.se>
  * @copyright   2017 Inkassogram AB (publ)
  * @version     2.0.0
@@ -36,7 +36,7 @@ namespace Includes\Inkassogram\Invoice;
  * The Inkassogram Invoice SOAP API client.
  *
  * @package Inkassogram
- * @author  Johan Sall Larsson <johan@Inkassogram.se>
+ * @author  Inkassogram <dev@inkassogram.se>
  * @author  Simon Stal <simon@Inkassogram.se>
  * @since   2.0.0
  */

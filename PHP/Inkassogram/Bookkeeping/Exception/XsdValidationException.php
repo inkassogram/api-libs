@@ -2,7 +2,7 @@
 /**
  * Inkassogram Bookkeeping API Client
  *
- * @author      Johan Sall Larsson <johan@inkassogram.se>
+ * @author      Inkassogram <dev@inkassogram.se>
  * @author      Simon Stal <simon@inkassogram.se>
  * @copyright   2017 Inkassogram AB (publ)
  * @version     2.0.0
@@ -36,7 +36,7 @@ namespace Inkassogram\Bookkeeping\Exception;
  * Thrown if the XML data unsuccessfully passes XSD validation.
  *
  * @package Inkassogram
- * @author  Johan Sall Larsson <johan@inkassogram.se>
+ * @author  Inkassogram <dev@inkassogram.se>
  * @author  Simon Stal <simon@inkassogram.se>
  * @since   2.0.0
  */

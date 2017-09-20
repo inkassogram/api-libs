@@ -2,7 +2,7 @@
 /**
  * Inkassogram Invoice SOAP API Client
  *
- * @author      Johan Sall Larsson <johan@inkassogram.se>
+ * @author      Inkassogram <dev@inkassogram.se>
  * @author      Simon Stal <simon@inkassogram.se>
  * @copyright   2017 Inkassogram AB (publ)
  * @version     2.0.0
@@ -36,7 +36,7 @@ namespace Inkassogram\Invoice\Contract;
  * Class equivalent to XSD element GetUsersFromCompanyRequest.
  *
  * @package Inkassogram
- * @author  Johan Sall Larsson <johan@inkassogram.se>
+ * @author  Inkassogram <dev@inkassogram.se>
  * @author  Simon Stal <simon@inkassogram.se>
  * @since   2.0.0
  */
