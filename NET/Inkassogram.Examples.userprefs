@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{FF408E2C-D959-43BA-B9BE-8FCA8D562141}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Inkassogram.Examples/Contracts/CreateInvoiceRequest.cs">
+    <Files>
+      <File FileName="Inkassogram.Examples/App.config" Line="8" Column="26" />
+      <File FileName="Inkassogram.Examples/BookkeepingClient.cs" Line="19" Column="70" />
+      <File FileName="Inkassogram.Examples/Program.cs" Line="1" Column="1" />
+      <File FileName="Inkassogram.Examples/Properties/AssemblyInfo.cs" Line="8" Column="47" />
+      <File FileName="Inkassogram.Examples/Contracts/CreateInvoiceRequest.cs" Line="14" Column="75" />
+      <File FileName="Inkassogram.Examples/Contracts/CreditInvoiceRequest.cs" Line="1" Column="1" />
+      <File FileName="Inkassogram.Examples/Contracts/CreditInvoiceResponse.cs" Line="1" Column="1" />
+      <File FileName="Inkassogram.Examples/Contracts/Enums.cs" Line="1" Column="1" />
+      <File FileName="Inkassogram.Examples/Contracts/CreateInvoiceResponse.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Inkassogram.Examples PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
