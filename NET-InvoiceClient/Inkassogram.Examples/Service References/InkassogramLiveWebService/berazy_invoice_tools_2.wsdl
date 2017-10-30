@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:http://schema.invoice.inkassogram.se:v2" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:res="urn:http://types.invoice.inkassogram.se:v2" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:http://schema.invoice.inkassogram.se:v2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Version: 2.0</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:http://schema.invoice.inkassogram.se:v2">
+      <xsd:import schemaLocation="http://www.inkassogram.se/soap/wsdl/inkassogram_invoice_tools_schema_2.0.xsd" namespace="urn:http://types.invoice.inkassogram.se:v2" />
+      <xsd:element name="SsnCheckRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="request" type="res:SsnCheckRequestType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SsnCheckResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" nillable="true" type="res:SsnCheckResponseType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InvoiceStatusRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="request" type="res:InvoiceStatusRequestType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InvoiceStatusResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" nillable="true" type="res:InvoiceStatusResponseType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InvoiceDetailsRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="request" type="res:InvoiceDetailsRequestType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InvoiceDetailsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" nillable="true" type="res:InvoiceDetailsResponseType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ActivateInvoiceRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="request" type="res:ActivateInvoiceRequestType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ActivateInvoiceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" nillable="true" type="res:ActivateInvoiceResponseType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ResendInvoiceRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="request" type="res:ResendInvoiceRequestType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ResendInvoiceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" nillable="true" type="res:ResendInvoiceResponseType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PauseInvoiceRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="request" type="res:PauseInvoiceRequestType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PauseInvoiceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" nillable="true" type="res:PauseInvoiceResponseType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SearchCompanyRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="request" type="res:SearchCompanyRequestType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SearchCompanyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" nillable="true" type="res:SearchCompanyResponseType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FetchInvoiceRowsRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="request" type="res:FetchInvoiceRowsRequestType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FetchInvoiceRowsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" nillable="true" type="res:FetchInvoiceRowsResponseType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SsnCheckRequest">
+    <wsdl:part name="parameters" element="tns:SsnCheckRequest" />
+  </wsdl:message>
+  <wsdl:message name="SsnCheckResponse">
+    <wsdl:part name="parameters" element="tns:SsnCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceStatusRequest">
+    <wsdl:part name="parameters" element="tns:InvoiceStatusRequest" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceStatusResponse">
+    <wsdl:part name="parameters" element="tns:InvoiceStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceDetailsRequest">
+    <wsdl:part name="parameters" element="tns:InvoiceDetailsRequest" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceDetailsResponse">
+    <wsdl:part name="parameters" element="tns:InvoiceDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivateInvoiceRequest">
+    <wsdl:part name="parameters" element="tns:ActivateInvoiceRequest" />
+  </wsdl:message>
+  <wsdl:message name="ActivateInvoiceResponse">
+    <wsdl:part name="parameters" element="tns:ActivateInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResendInvoiceRequest">
+    <wsdl:part name="parameters" element="tns:ResendInvoiceRequest" />
+  </wsdl:message>
+  <wsdl:message name="ResendInvoiceResponse">
+    <wsdl:part name="parameters" element="tns:ResendInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="PauseInvoiceRequest">
+    <wsdl:part name="parameters" element="tns:PauseInvoiceRequest" />
+  </wsdl:message>
+  <wsdl:message name="PauseInvoiceResponse">
+    <wsdl:part name="parameters" element="tns:PauseInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchCompanyRequest">
+    <wsdl:part name="parameters" element="tns:SearchCompanyRequest" />
+  </wsdl:message>
+  <wsdl:message name="SearchCompanyResponse">
+    <wsdl:part name="parameters" element="tns:SearchCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchInvoiceRowsRequest">
+    <wsdl:part name="parameters" element="tns:FetchInvoiceRowsRequest" />
+  </wsdl:message>
+  <wsdl:message name="FetchInvoiceRowsResponse">
+    <wsdl:part name="parameters" element="tns:FetchInvoiceRowsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="InvoiceService">
+    <wsdl:operation name="SsnCheck">
+      <wsdl:input message="tns:SsnCheckRequest" />
+      <wsdl:output message="tns:SsnCheckResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <wsdl:input message="tns:InvoiceStatusRequest" />
+      <wsdl:output message="tns:InvoiceStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceDetails">
+      <wsdl:input message="tns:InvoiceDetailsRequest" />
+      <wsdl:output message="tns:InvoiceDetailsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateInvoice">
+      <wsdl:input message="tns:ActivateInvoiceRequest" />
+      <wsdl:output message="tns:ActivateInvoiceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ResendInvoice">
+      <wsdl:input message="tns:ResendInvoiceRequest" />
+      <wsdl:output message="tns:ResendInvoiceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="PauseInvoice">
+      <wsdl:input message="tns:PauseInvoiceRequest" />
+      <wsdl:output message="tns:PauseInvoiceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCompany">
+      <wsdl:input message="tns:SearchCompanyRequest" />
+      <wsdl:output message="tns:SearchCompanyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchInvoiceRows">
+      <wsdl:input message="tns:FetchInvoiceRowsRequest" />
+      <wsdl:output message="tns:FetchInvoiceRowsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InvoiceServiceBinding" type="tns:InvoiceService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SsnCheck">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceDetails">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateInvoice">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResendInvoice">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PauseInvoice">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCompany">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchInvoiceRows">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InvoiceService">
+    <wsdl:port name="InvoiceServicePort" binding="tns:InvoiceServiceBinding">
+      <soap:address location="http://www.inkassogram.se/soap/invoice_v2.0" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

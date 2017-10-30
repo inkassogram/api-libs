@@ -1,0 +1,6 @@
+/Users/bastos/Development/Berazy-Invoice-API/Invoice-API/v2/NET/Berazy.Examples/bin/Debug/Berazy.Examples.exe.config
+/Users/bastos/Development/Berazy-Invoice-API/Invoice-API/v2/NET/Berazy.Examples/bin/Debug/Berazy.Examples.exe
+/Users/bastos/Development/Berazy-Invoice-API/Invoice-API/v2/NET/Berazy.Examples/bin/Debug/Berazy.Examples.pdb
+/Users/bastos/Development/Berazy-Invoice-API/Invoice-API/v2/NET/Berazy.Examples/obj/Debug/Inkassogram.Examples.csproj.CoreCompileInputs.cache
+/Users/bastos/Development/Berazy-Invoice-API/Invoice-API/v2/NET/Berazy.Examples/obj/Debug/Berazy.Examples.exe
+/Users/bastos/Development/Berazy-Invoice-API/Invoice-API/v2/NET/Berazy.Examples/obj/Debug/Berazy.Examples.pdb

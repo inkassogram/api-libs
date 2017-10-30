@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:tns="urn:http://types.invoice.inkassogram.se:v2" elementFormDefault="qualified" targetNamespace="urn:http://types.invoice.inkassogram.se:v2" version="2.0" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="SsnCheckRequestType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="key" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="customerno" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="credit_check" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="get_company" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="email" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="ssn" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="country" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="test" type="boolean" />
+    </sequence>
+  </complexType>
+  <complexType name="SsnCheckResponseType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="ssn" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="company_name" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="first_name" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="last_name" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="given_name" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="address" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="zip" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="city" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="country" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="credit_status" type="int" />
+    </sequence>
+  </complexType>
+  <complexType name="InvoiceStatusRequestType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="key" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="customerno" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="order_no" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="ocr" type="int" />
+    </sequence>
+  </complexType>
+  <complexType name="InvoiceStatusResponseType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="ocr" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="order_no" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="first_invoice_price" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="amount_paid_endcustomer" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="amount_left_endcustomer" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="amount_debt_paid" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="debt_paid" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="money_received" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="partPayment" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="invoice_cost" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="credit_amount" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="invoice_pdf" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="invoice_date" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="invoice_due_date" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="reminder_pdf" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="reminder_date" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="reminder_due_date" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="debt_collection_pdf" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="debt_collection_date" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="debt_collection_due_date" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="refund_pdf" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="skip_reminder" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="skip_debt_collection" type="boolean" />
+    </sequence>
+  </complexType>
+  <complexType name="InvoiceDetailsRequestType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="key" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="customerno" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="order_no" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="ocr" type="int" />
+    </sequence>
+  </complexType>
+  <complexType name="InvoiceDetailsResponseType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="ocr" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="order_no" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="ssn" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="organization_number" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="customer_name" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="address" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="zip" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="city" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="email" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="mobile" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="our_reference" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="your_reference" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="invoice_reference" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="invoice_order_no" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="country" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="careof_address1" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="careof_address2" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="careof_address3" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="careof_address4" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="careof_address5" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="careof_email" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="ActivateInvoiceRequestType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="key" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="customerno" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="order_no" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="ocr" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="send_invoice_date" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="invoice_due_date" type="int" />
+    </sequence>
+  </complexType>
+  <complexType name="ActivateInvoiceResponseType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="status" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="ocr" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="order_no" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="ResendInvoiceRequestType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="key" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="customerno" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="order_no" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="ocr" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="invoice_state" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="print_setup" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="email" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="mobile" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="clear_co_address" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="co_email" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="co_address1" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="co_address2" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="co_address3" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="co_address4" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="co_address5" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="invoice_reference" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="invoice_order_no" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="our_reference" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="your_reference" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="ResendInvoiceResponseType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="status" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="ocr" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="order_no" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="PauseInvoiceRequestType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="key" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="customerno" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="order_no" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="ocr" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="pause" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="skip_reminder" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="skip_debt_collection" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="invoice_due_date" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="reminder_due_date" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="debt_collection_due_date" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="PauseInvoiceResponseType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="status" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="ocr" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="order_no" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="SearchCompanyRequestType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="key" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="customerno" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="company_name" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="phonetic_search" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="country" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="number_hits" type="int" />
+    </sequence>
+  </complexType>
+  <complexType name="SearchCompanyResponseType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="status" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="rows" type="tns:company_listType" />
+    </sequence>
+  </complexType>
+  <complexType name="companyType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="company_name" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="organization_number" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="address" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="zip" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="city" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="company_listType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="company" nillable="true" type="tns:companyType" />
+    </sequence>
+  </complexType>
+  <complexType name="FetchInvoiceRowsRequestType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="key" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="customerno" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="ocr" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="order_no" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="fetch_rows_remain_to_credit" type="boolean" />
+    </sequence>
+  </complexType>
+  <complexType name="FetchInvoiceRowsResponseType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="status" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="invoice_rows" type="tns:invoice_rowsType" />
+    </sequence>
+  </complexType>
+  <complexType name="invoice_rowType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="article_no" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="text" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="desc" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="price" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="quantity" type="float" />
+      <element minOccurs="1" maxOccurs="1" name="vat" type="int" />
+    </sequence>
+  </complexType>
+  <complexType name="invoice_rowsType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="invoice_row" nillable="true" type="tns:invoice_rowType" />
+    </sequence>
+  </complexType>
+</schema>

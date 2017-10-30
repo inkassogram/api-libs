@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{DF67EB5F-89C9-47E4-A580-727CA7FECE3A}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Inkassogram.Examples/App.config">
+    <Files>
+      <File FileName="Inkassogram.Examples/App.config" Line="19" Column="48" />
+      <File FileName="Inkassogram.Examples/Program.cs" Line="1" Column="1" />
+      <File FileName="Inkassogram.Examples/DataAccess/ServiceAgent/Contract/IInvoiceServiceAgent.cs" Line="33" Column="22" />
+      <File FileName="Inkassogram.Examples/DataAccess/ServiceAgent/InvoiceServiceAgent.cs" Line="26" Column="23" />
+      <File FileName="Inkassogram.Examples/Utils/Ext/ObjectExt.cs" Line="28" Column="32" />
+      <File FileName="Inkassogram.Examples/Properties/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="Inkassogram.Examples/Service References/InkassogramLiveWebService/Reference.svcmap" Line="15" Column="24" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Inkassogram.Examples PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
