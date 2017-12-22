@@ -4,9 +4,9 @@ Version: ``3.0.0``
 
 Contains API libraries for both the Fakturagram and Inkassogram web services.
 
-## Languages
+## Languages (API version 2.0)
 
-The library is provided in the following languages:
+The libraries are provided in the following languages:
 
 * ``PHP``
 * ``Java``
