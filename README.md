@@ -15,4 +15,4 @@ The libraries are provided in the following languages:
 
 ## Support
 
-For question regarding integrations please referer to ``https://www.inkassogram.se``.
+For question regarding integrations please referer to ``https://www.waya.se``.
